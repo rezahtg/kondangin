@@ -5,7 +5,7 @@ import { cewe, cowo } from '../assets';
 
 function About() {
   return (
-    <Container className="position-relative about-container" fluid>
+    <Container className="position-relative about-container mb-5" fluid>
       <h2 className="text-center mb-4 font-playfair">Undangan Pernikahan</h2>
       <p className="text-center mb-5">
         <span className="font-playfair">
@@ -24,14 +24,15 @@ function About() {
               Anak Ke-2 dari Bp. J Manurung <br /> & Ibu. K Sitorus
             </p>
             <Button
-              variant="outline-dark"
+              variant="link"
               size="sm"
-              className="mt-2"
+              className="mt-2 text-dark text-decoration-none"
+              style={{ fontSize: '0.85rem', padding: '0.25rem 0.5rem' }}
               href={process.env.REACT_APP_INSTAGRAM_JANET}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram className="me-2" />
+              <FaInstagram className="me-1" />
               Instagram
             </Button>
           </div>
@@ -44,14 +45,15 @@ function About() {
               Anak Ke-4 dari Bp. B Siagian <br /> & Ibu. R Simanjuntak
             </p>
             <Button
-              variant="outline-dark"
+              variant="link"
               size="sm"
-              className="mt-2"
+              className="mt-2 text-dark text-decoration-none"
+              style={{ fontSize: '0.85rem', padding: '0.25rem 0.5rem' }}
               href={process.env.REACT_APP_INSTAGRAM_FERY}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram className="me-2" />
+              <FaInstagram className="me-1" />
               Instagram
             </Button>
           </div>
