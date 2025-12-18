@@ -27,7 +27,7 @@ function About() {
               variant="outline-dark"
               size="sm"
               className="mt-2"
-              href="https://instagram.com/janeteliana"
+              href={process.env.REACT_APP_INSTAGRAM_JANET}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,7 +47,7 @@ function About() {
               variant="outline-dark"
               size="sm"
               className="mt-2"
-              href="https://instagram.com/feryokto"
+              href={process.env.REACT_APP_INSTAGRAM_FERY}
               target="_blank"
               rel="noopener noreferrer"
             >
