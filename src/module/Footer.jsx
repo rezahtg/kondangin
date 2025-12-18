@@ -9,7 +9,7 @@ function Footer() {
         </h2>
       </div> */}
       <footer className="bgcolor-cream py-3 text-center font-readex">
-        Build with <span className="text-danger">&hearts;</span> By Reza Hutagaol &copy; 2025 || Inspired By Kevin
+        Developed with <span className="text-danger">&hearts;</span> By Reza Hutagaol &copy; 2025
       </footer>
     </div>
   );

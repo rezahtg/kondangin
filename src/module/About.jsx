@@ -1,5 +1,7 @@
+```javascript
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { FaInstagram } from 'react-icons/fa';
 import { cewe, cowo } from '../assets';
 
 function About() {
@@ -22,6 +24,17 @@ function About() {
             <p className="font-playfair about-description">
               Anak Ke-2 dari Bp. J Manurung <br /> & Ibu. K Sitorus
             </p>
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="mt-2"
+              href="https://instagram.com/janeteliana"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="me-2" />
+              Instagram
+            </Button>
           </div>
         </Col>
         <Col md="4">
@@ -31,6 +44,17 @@ function About() {
             <p className="font-playfair about-description">
               Anak Ke-4 dari Bp. B Siagian <br /> & Ibu. R Simanjuntak
             </p>
+            <Button
+              variant="outline-dark"
+              size="sm"
+              className="mt-2"
+              href="https://instagram.com/feryokto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="me-2" />
+              Instagram
+            </Button>
           </div>
         </Col>
       </Row>
