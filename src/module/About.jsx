@@ -20,7 +20,7 @@ function About() {
           <div className="mt-2 text-center">
             <h3 className="font-dancing about-name">Janet Eliana Manurung S.pd</h3>
             <p className="font-playfair about-description">
-              Putri Ke-2 dari Bp. J Manurung <br /> & Ibu. K Sitorus
+              Anak Ke-2 dari Bp. J Manurung <br /> & Ibu. K Sitorus
             </p>
           </div>
         </Col>
