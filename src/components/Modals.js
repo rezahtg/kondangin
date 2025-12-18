@@ -14,6 +14,15 @@ function Modals() {
     }
   }, []);
 
+  // Fix scroll lock issue when modal closes
+  useEffect(() => {
+    if (!show) {
+      // Ensure body can scroll after modal closes
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+    }
+  }, [show]);
+
   return (
     <Modal show={show} fullscreen={true}>
       <Modal.Body className="d-flex text-center justify-content-center flex-column align-items-center modal-background">
@@ -32,7 +41,7 @@ function Modals() {
           )}
           <Button
             variant="secondary"
-            onClick={() => setShow(false)} W
+            onClick={() => setShow(false)}
             className="font-playfair"
             style={{ letterSpacing: '1px' }}
           >
