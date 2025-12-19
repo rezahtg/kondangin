@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-image-lightbox/style.css';
 import 'react-vertical-timeline-component/style.min.css';
 import './App.css';
-import Navigation from './module/Nav';
 import About from './module/About';
 import CountdownTimer from './module/CountdownTimer';
 import Place from './module/Place';
