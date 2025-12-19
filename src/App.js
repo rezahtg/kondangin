@@ -32,7 +32,7 @@ function App() {
       <Payment />
       <Footer />
       <Modals />
-      <ReactHowler src={song} playing={true} />
+      <ReactHowler src={song} playing={true} loop={true} volume={0.3} />
     </div>
   );
 }
