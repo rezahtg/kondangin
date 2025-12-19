@@ -25,7 +25,7 @@ function App() {
       <Hero />
       <About />
       <Galeri />
-      {/* <Timeline /> */}
+      <Timeline />
       <CountdownTimer />
       <Place />
       <GuestBook />

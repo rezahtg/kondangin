@@ -26,8 +26,8 @@ export const photos = [
   },
   {
     src: gallery4,
-    width: 4,
-    height: 5,
+    width: 2,
+    height: 3,
   },
   {
     src: gallery5,
@@ -36,12 +36,12 @@ export const photos = [
   },
   {
     src: gallery6,
-    width: 4,
-    height: 5,
+    width: 2,
+    height: 3,
   },
   {
     src: gallery7,
-    width: 4,
-    height: 5,
+    width: 2,
+    height: 3,
   }
 ];

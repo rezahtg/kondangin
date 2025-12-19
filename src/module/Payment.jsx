@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Button, Row, Col, Card, Modal, Form } from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 import { sendWhatsAppMessage, DEFAULT_WHATSAPP_NUMBER } from '../utils/whatsappTemplate';
 
 function Payment() {
@@ -26,9 +26,26 @@ function Payment() {
 
   const copyToClipboard = (text, bankName) => {
     navigator.clipboard.writeText(text).then(() => {
-      toast.success(`Nomor rekening ${bankName} telah disalin!`);
+      Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: `Nomor rekening ${bankName} telah disalin!`,
+        timer: 1500,
+        showConfirmButton: false,
+        position: 'top-end',
+        toast: true,
+        timerProgressBar: true
+      });
     }).catch(() => {
-      toast.error('Gagal menyalin nomor rekening');
+      Swal.fire({
+        icon: 'error',
+        title: 'Gagal!',
+        text: 'Gagal menyalin nomor rekening',
+        timer: 2000,
+        showConfirmButton: false,
+        position: 'top-end',
+        toast: true
+      });
     });
   };
 
@@ -46,7 +63,13 @@ function Payment() {
   const handleSubmitProof = (e) => {
     e.preventDefault();
     if (!userName.trim()) {
-      toast.error('Mohon masukkan nama Anda');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Perhatian!',
+        text: 'Mohon masukkan nama Anda',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#198754'
+      });
       return;
     }
 
@@ -54,35 +77,33 @@ function Payment() {
     sendWhatsAppMessage(DEFAULT_WHATSAPP_NUMBER, userName, message);
 
     handleModalClose();
-    toast.success('Membuka WhatsApp...');
+    Swal.fire({
+      icon: 'success',
+      title: 'Berhasil!',
+      text: 'Membuka WhatsApp...',
+      timer: 1500,
+      showConfirmButton: false,
+      position: 'top-end',
+      toast: true,
+      timerProgressBar: true
+    });
   };
 
   return (
     <Container fluid className="py-5">
       <div className="d-flex flex-column align-items-center p-4">
         <h3 className="font-playfair text-center fw-bold mb-3">Amplop Digital</h3>
-        <p className="font-playfair text-center mb-5" style={{ maxWidth: '600px' }}>
+        <p className="font-playfair text-center mb-5 payment-container-max-width">
           Doa dan kehadiran Anda adalah hadiah terindah bagi kami. Namun jika memberi adalah ungkapan kasih Anda, kami dengan senang hati menerimanya melalui:
         </p>
 
-        <Row className="g-4 w-100" style={{ maxWidth: '800px' }}>
+        <Row className="g-4 w-100 payment-cards-max-width">
           {bankAccounts.map((account) => (
             <Col xs={12} md={6} key={account.id}>
-              <Card className="h-100 shadow-sm border-0" style={{ borderRadius: '15px' }}>
+              <Card className="h-100 shadow-sm border-0 payment-card">
                 <Card.Body className="d-flex flex-column align-items-center p-4">
                   {/* Bank Icon/Logo */}
-                  <div
-                    className="mb-3 d-flex align-items-center justify-content-center"
-                    style={{
-                      width: '80px',
-                      height: '80px',
-                      borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                      color: 'white',
-                      fontSize: '24px',
-                      fontWeight: 'bold'
-                    }}
-                  >
+                  <div className="mb-3 d-flex align-items-center justify-content-center payment-bank-icon">
                     {account.bankName.split(' ')[1].charAt(0)}
                   </div>
 
@@ -91,42 +112,30 @@ function Payment() {
 
                   {/* Account Number */}
                   <div className="w-100 mb-3">
-                    <p className="text-muted mb-1" style={{ fontSize: '0.85rem' }}>Nomor Rekening</p>
-                    <div
-                      className="p-3 text-left"
-                      style={{
-                        backgroundColor: '#f8f9fa',
-                        borderRadius: '10px',
-                        fontSize: '1.0rem',
-                        fontWeight: 'bold',
-                        letterSpacing: '2px',
-                        fontFamily: 'monospace'
-                      }}
-                    >
+                    <p className="text-muted mb-1 payment-label">Nomor Rekening</p>
+                    <div className="payment-account-number text-left">
                       {account.accountNumber}
                     </div>
                   </div>
 
                   {/* Account Name */}
                   <div className="w-100 mb-3">
-                    <p className="text-muted mb-1" style={{ fontSize: '0.85rem' }}>Atas Nama</p>
-                    <p className="fw-bold mb-0" style={{ fontSize: '1.1rem' }}>{account.accountName}</p>
+                    <p className="text-muted mb-1 payment-label">Atas Nama</p>
+                    <p className="fw-bold mb-0 payment-account-name">{account.accountName}</p>
                   </div>
 
                   {/* Buttons */}
                   <div className="d-flex gap-2 w-100 mt-auto">
                     <Button
                       variant="outline-primary"
-                      className="flex-fill"
+                      className="flex-fill payment-btn"
                       onClick={() => copyToClipboard(account.accountNumber, account.bankName)}
-                      style={{ borderRadius: '10px' }}
                     >Salin No. Rekening
                     </Button>
                     <Button
                       variant="success"
-                      className="flex-fill"
+                      className="flex-fill payment-btn"
                       onClick={() => handleSendProofClick(account.bankName, account.accountNumber)}
-                      style={{ borderRadius: '10px' }}
                     >Kirim Bukti
                     </Button>
                   </div>
@@ -175,14 +184,6 @@ function Payment() {
           </Modal.Footer>
         </Form>
       </Modal>
-
-      <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-      />
     </Container>
   );
 }

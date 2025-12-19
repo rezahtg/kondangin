@@ -1,12 +1,7 @@
-import cewe from './image/janet.png';
-import cowo from './image/fery.png';
+import cewe from './image/cewe.jpeg';
+import cowo from './image/cowo.jpeg';
 import ceremony from './image/gereja.jpeg';
 import reception from './image/house.png';
-import first_date from './image/first_date.jpg';
-import engagement from './image/engagement.jpeg';
-import wedding from './image/wedding.jpeg';
-import meet_again from './image/meet_again.jpeg';
-import met from './image/met.png';
 import thanks from './image/thanks.svg';
 
 import gallery1 from './image/gallery/galleri-1.jpeg';
@@ -33,9 +28,6 @@ export {
   cowo,
   ceremony,
   reception,
-  first_date,
-  engagement,
-  wedding,
   song,
   gallery1,
   gallery2,
@@ -44,7 +36,5 @@ export {
   gallery5,
   gallery6,
   gallery7,
-  thanks,
-  meet_again,
-  met
+  thanks
 };
