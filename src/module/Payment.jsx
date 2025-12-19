@@ -125,7 +125,7 @@ function Payment() {
                   </div>
 
                   {/* Buttons */}
-                  <div className="d-flex gap-2 w-100 mt-auto">
+                  <div className="payment-btn-container">
                     <Button
                       variant="outline-primary"
                       className="flex-fill payment-btn"
