@@ -18,7 +18,7 @@ function Timeline() {
     },
     {
       title: 'Lamaran',
-      date: '2024',
+      date: '2025',
       description:
         "Dengan keberanian dan doa kami meminta restu kepada orang tua, menguatkan kami untuk bersama dalam suka maupun duka",
     },
